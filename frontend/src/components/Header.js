@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -8,22 +8,16 @@ const Header = () => {
     <header>
       <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
         <Container>
-          <LinkContainer to="/">
-            <Navbar.Brand>shopHere</Navbar.Brand>
-          </LinkContainer>
+          <Link style={{color:"white",textDecoration:'none',transform:"scale(1.5)"}}  to='/'>SHOPHERE</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <LinkContainer to="/cart">
-                <Nav.Link>
+              <Link style={{color:"white",textDecoration:'none',marginLeft:'16px'}} to="/cart">
                   <i className="fas fa-shopping-cart"></i> Cart
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/login">
-                <Nav.Link>
+              </Link>
+              <Link style={{color:"white",textDecoration:'none',marginLeft:'16px'}} to="/login">
                   <i className="fas fa-user"></i> Login
-                </Nav.Link>
-              </LinkContainer>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
