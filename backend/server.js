@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js';
 import productRouter from './routes/productRoutes.js'
+import  userRouter from './routes/userRoutes.js'
 import {notFound,errorHandler} from './middleware/errorMiddleware.js'
 
 
@@ -10,12 +11,15 @@ connectDB();
 
 const app=express();
 
+app.use(express.json())
+
 app.get('/',(req,res)=>{
     res.send('api is running ')
 
 })
 
 app.use('/api/products',productRouter)
+app.use('/api/users',userRouter)
 
 //here we are overriding the error middleware
 //because the middleware that are present before this
